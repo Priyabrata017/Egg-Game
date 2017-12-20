@@ -88,6 +88,7 @@ function gameOver(msg){
 function updateScore(){
 	score++;
 	scoreTag.innerText = "score :" +score;
+	score = 0;
 }
 
 function jumpEgg(){
