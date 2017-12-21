@@ -83,17 +83,19 @@ function resetCanvas(){
 
 function gameOver(msg){
 	alert(msg);
+	score = 0;
+	scoreTag.innerText = "score :" +score;
 }
 
 function updateScore(){
 	score++;
 	scoreTag.innerText = "score :" +score;
-	score = 0;
+	console.log(score);
 }
 
 function jumpEgg(){
-	console.log("before"+player);
-	console.log("before"+nextPlayer);
+	//console.log("before"+player);
+	//console.log("before"+nextPlayer);
 	nextPlayer = (player-1) < 0 ? 3 : (player - 1);
 
 	if(arrPlt[nextPlayer].pos.xCod >= arrPlt[player].pos.xCod - 2
@@ -114,8 +116,8 @@ function jumpEgg(){
 			arrPlt[i].isPlayer = false;
 		}
 	}
-	console.log("after"+player);
-	console.log("after"+nextPlayer);
+	//console.log("after"+player);
+	//console.log("after"+nextPlayer);
 }
 
 document.addEventListener("keydown",keyPressed);
@@ -143,7 +145,7 @@ function update(){
 
 		if(arrPlt[nextPlayer].pos.xCod >= arrPlt[player].pos.xCod - 2 
 		 && arrPlt[nextPlayer].pos.xCod <= arrPlt[player].pos.xCod + 2){
-			console.log("player"+arrPlt[player].pos.xCod+"\nnext"+arrPlt[nextPlayer].pos.xCod);
+			//console.log("player"+arrPlt[player].pos.xCod+"\nnext"+arrPlt[nextPlayer].pos.xCod);
 		}
 	}
 
